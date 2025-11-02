@@ -1,264 +1,34 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Magisches Schild 🐾✨</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg-dark:#0b1023;
-  --panel-bg:rgba(50,30,80,0.9);
-  --text:#ffe4f0;
-  --accent:#ff99ff;
-  --accent-glow:#ff99ffaa;
-  --gold:#ffd75c;
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-body{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  font-family:'Nunito',sans-serif;
-  color: var(--text);
-  background: radial-gradient(circle at top,#10183a 0%,var(--bg-dark) 100%);
-}
-
-/* Vordergrund-Panel */
-.container{
-  position:relative;
-  background: var(--panel-bg);
-  backdrop-filter: blur(8px);
-  border-radius:30px;
-  padding:5%;
-  max-width:700px;
-  width:90%;
-  box-shadow:0 0 50px var(--accent-glow);
-  z-index:2;
-  border:4px dashed var(--gold);
-  animation:glowPanel 3s ease-in-out infinite alternate;
-  box-sizing:border-box;
-}
-@keyframes glowPanel{
-  0%{box-shadow:0 0 25px var(--accent-glow);}
-  50%{box-shadow:0 0 65px var(--gold);}
-  100%{box-shadow:0 0 25px var(--accent-glow);}
-}
-
-h1{
-  font-family:'Orbitron',sans-serif;
-  font-size:2.5em;
-  color: var(--accent);
-  text-shadow:0 0 25px var(--accent-glow);
-  margin-bottom:10px;
-}
-
-.subtitle{
-  font-size:1.3em;
-  color:#ffd6ff;
-  margin-bottom:10px;
-}
-
-.scoreboard{
-  font-size:1.2em;
-  margin-bottom:15px;
-  color: var(--gold);
-  font-weight:bold;
-  text-shadow:0 0 5px #ffd75c;
-  transition: text-shadow 0.3s ease;
-}
-
-.button-home{
-  display:inline-block;
-  padding:14px 35px;
-  background-color:var(--accent);
-  color:var(--bg-dark);
-  text-decoration:none;
-  border-radius:20px;
-  font-weight:bold;
-  margin-top:20px;
-  box-shadow:0 0 25px var(--accent-glow);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-.button-home:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 40px var(--gold);
-}
-
-/* Sterne */
-.star{
-  position:absolute;
-  background: url('https://static.vecteezy.com/system/resources/thumbnails/045/758/266/small_2x/golden-light-lens-flares-png.png') no-repeat center/contain;
-  opacity:0.6;
-  animation:twinkleStar 3s infinite alternate;
-}
-@keyframes twinkleStar{
-  0%{opacity:0.4;}
-  50%{opacity:0.8;}
-  100%{opacity:0.4;}
-}
-
-/* Mauspfote */
-.cursor-paw{
-  position:absolute;
-  width:50px;
-  height:50px;
-  pointer-events:none;
-  background: url('https://pngimg.com/uploads/paw/paw_PNG13.png') no-repeat center/contain;
-  z-index:10;
-  transform:translate(-50%,-50%);
-}
-
-/* Eltern-Hinweis */
-details summary{
-  cursor:pointer;
-  font-weight:bold;
-  margin-top:15px;
-  color:#ffd6ff;
-}
-.details-content{
-  margin-top:8px;
-  color:#ffe4f0;
-  font-size:0.95em;
-}
-
-/* Footer */
-.footer{
-  position:absolute;
-  bottom:10px;
-  width:100%;
-  text-align:center;
-  font-size:0.8em;
-  color:#888;
-}
-
-@media (max-width:500px){
-  h1{font-size:2em;}
-  .subtitle{font-size:1.1em;}
-  .scoreboard{font-size:1em;}
-  .button-home{padding:10px 25px;}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magisches Schild 🐾✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div class="container">
-  <h1>Wuff Wuff! 🐾</h1>
-  <p class="subtitle">Ups! Diese Seite ist geschützt 💫</p>
-  <p class="scoreboard">Gefangene Sterne: <span id="score">0</span></p>
-  <p>Fang die Sterne mit deiner Pfote! 🌟</p>
-  <a href="https://fragfinn.de" class="button-home">Zurück zur sicheren Seite</a>
+    <div class="container">
+        <h1>Wuff Wuff! 🐾</h1>
+        <p class="subtitle">Ups! Diese Seite ist geschützt 💫</p>
+        <p class="scoreboard">Gefangene Sterne: <span id="score">0</span></p>
+        <p>Fang die Sterne mit deiner Pfote! 🌟</p>
+        <a href="https://fragfinn.de" class="button-home">Zurück zur sicheren Seite</a>
 
-  <details>
-    <summary>Eltern-Hinweis anzeigen</summary>
-    <div class="details-content">
-      Grund der Sperre: <strong>__msg__</strong><br>
-      App: <strong>__app__</strong><br>
-      Kategorie: <strong>__appcat__</strong>
+        <details>
+            <summary>Eltern-Hinweis anzeigen</summary>
+            <div class="details-content">
+                Grund der Sperre: <strong>__msg__</strong><br>
+                App: <strong>__app__</strong><br>
+                Kategorie: <strong>__appcat__</strong>
+            </div>
+        </details>
     </div>
-  </details>
-</div>
 
-<div id="stars"></div>
-<div class="cursor-paw"></div>
-<div class="footer">© 2025 Sven Weigle – Familienfreundliche Blockpage 🐾✨</div>
+    <div id="stars"></div>
+    <div class="cursor-paw"></div>
+    <div class="footer">© 2025 Sven Weigle – Familienfreundliche Blockpage 🐾✨</div>
 
-<script>
-const starsContainer = document.getElementById('stars');
-let stars = [];
-let score = 0;
-const scoreDisplay = document.getElementById('score');
-const cursor = document.querySelector('.cursor-paw');
-const numInitialStars = 60;
-
-// Funktion Sterne erstellen
-function createStar(sizeRange=[10,25]){
-  const s = document.createElement('div');
-  s.className = 'star';
-  const size = Math.random()*(sizeRange[1]-sizeRange[0])+sizeRange[0];
-  s.style.width = size+'px';
-  s.style.height = size+'px';
-  const x = Math.random()*window.innerWidth;
-  const y = Math.random()*window.innerHeight;
-  s.dataset.x = x;
-  s.dataset.y = y;
-  s.dataset.dx = (Math.random()*2-1)*0.3;
-  s.dataset.dy = Math.random()*1+0.5;
-  s.style.left = x+'px';
-  s.style.top = y+'px';
-  starsContainer.appendChild(s);
-  stars.push(s);
-}
-
-// Initiale Sterne
-for(let i=0;i<numInitialStars;i++) createStar();
-
-// Kollisionserkennung
-function checkCollision(clientX, clientY){
-  stars.forEach((star,index)=>{
-    const sx=parseFloat(star.dataset.x);
-    const sy=parseFloat(star.dataset.y);
-    const starSize=parseFloat(star.style.width);
-    const dist=Math.sqrt((clientX-sx)**2 + (clientY-sy)**2);
-    if(dist<starSize/2){
-      star.remove();
-      stars.splice(index,1);
-      score++;
-      scoreDisplay.textContent=score;
-      scoreDisplay.parentElement.style.textShadow="0 0 15px #ffd75c";
-      setTimeout(()=>{scoreDisplay.parentElement.style.textShadow="0 0 5px #ffd75c";},200);
-      createStar(); // Neuer Stern erscheint sofort nach Fangen
-    }
-  });
-}
-
-// Maus
-document.addEventListener('mousemove', e=>{
-  cursor.style.left=e.clientX+'px';
-  cursor.style.top=e.clientY+'px';
-  checkCollision(e.clientX, e.clientY);
-});
-
-// Touch
-document.addEventListener('touchmove', e=>{
-  const touch = e.touches[0];
-  cursor.style.left = touch.clientX+'px';
-  cursor.style.top = touch.clientY+'px';
-  checkCollision(touch.clientX, touch.clientY);
-});
-
-// Sterne animieren
-function animateStars(){
-  stars.forEach(star=>{
-    let x=parseFloat(star.dataset.x);
-    let y=parseFloat(star.dataset.y);
-    let dx=parseFloat(star.dataset.dx);
-    let dy=parseFloat(star.dataset.dy);
-
-    x+=dx;
-    y-=dy;
-    if(y<0) y=window.innerHeight;
-    if(x<0) dx=Math.abs(dx);
-    if(x>window.innerWidth) dx=-Math.abs(dx);
-
-    star.dataset.x=x;
-    star.dataset.y=y;
-    star.style.left=x+'px';
-    star.style.top=y+'px';
-  });
-  requestAnimationFrame(animateStars);
-}
-animateStars();
-</script>
+    <script src="js/stars.js"></script>
 </body>
 </html>
